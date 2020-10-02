@@ -9,25 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const menuPral_1 = require("../view/menuPral");
-const main = () => __awaiter(void 0, void 0, void 0, function* () {
+exports.menuPral = void 0;
+const entradaTeclado_1 = require("../view/entradaTeclado");
+exports.menuPral = () => __awaiter(void 0, void 0, void 0, function* () {
     let n;
-    do {
-        n = yield menuPral_1.menuPral();
-        switch (n) {
-            case 1:
-                console.log("Estoy en opción 1");
-                break;
-            case 2:
-                console.log("Estoy en opción 2");
-                break;
-            case 0:
-                console.log('\nAdios');
-                break;
-            default:
-                console.log("Opción incorrecta");
-                break;
-        }
-    } while (n != 0);
+    console.log('\n');
+    console.log('1.- Primera opción');
+    console.log('2.- Segunda opción');
+    console.log('0.- Salir');
+    n = parseInt(yield entradaTeclado_1.leerTeclado('opción: '));
+    return n;
 });
-main();
